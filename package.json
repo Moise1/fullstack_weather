@@ -4,6 +4,9 @@
   "description": "A full stack (postgres, express, react, nodejs) weather app",
   "main": "server.js",
   "scripts": {
+    "db:migrate": "node --require @babel/register ./server/db/dbConnect.js",
+    "db:droptables": "node --require @babel/register ./server/db/dropTables.js",
+    "server": "npm run db:droptables && npm run db:migrate && babel-watch ./server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -11,13 +14,15 @@
     "url": "git+https://github.com/Moise1/fullstack_weather.git"
   },
   "dependencies": {
-    "express": "^4.17.1",
     "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.3",
     "@babel/node": "^7.2.2",
-    "babel-cli": "^6.26.0",
     "@babel/preset-env": "^7.4.3",
+    "babel-cli": "^6.26.0",
     "babel-watch": "^7.0.0",
+    "dotenv": "^7.0.0",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0",
     "pg": "^7.10.0"
   },
   "devDependencies": {
