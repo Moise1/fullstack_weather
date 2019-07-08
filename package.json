@@ -1,0 +1,39 @@
+{
+  "name": "fullstack_weather",
+  "version": "1.0.0",
+  "description": "A full stack (postgres, express, react, nodejs) weather app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Moise1/fullstack_weather.git"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/node": "^7.2.2",
+    "babel-cli": "^6.26.0",
+    "@babel/preset-env": "^7.4.3",
+    "babel-watch": "^7.0.0",
+    "pg": "^7.10.0"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.1"
+  },
+  "keywords": [
+    "Nodejs",
+    "React",
+    "Express",
+    "Weather",
+    "App"
+  ],
+  "author": "Moise1",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Moise1/fullstack_weather/issues"
+  },
+  "homepage": "https://github.com/Moise1/fullstack_weather#readme"
+}
