@@ -1,23 +1,14 @@
 import db from '../db/dbInit'; 
 import fetch from 'node-fetch';
+import devKeys from '../config/dev';
 
 class City{
 
     static async createCity(req){
-        const {city_name, country_name} = req;
-        
-        const newRegion = {
-            city_name,
-            country_name
-        }
 
-        const values = [
-            newRegion.city_name, 
-            newRegion.country_name
-        ]
-
-        const queryText= 'INSERT INTO regions(city_name, country_name) VALUES($1, $2) RETURNING *'; 
-        const queryResut = await db.query(queryText, values);
+        const {city_name} = req ;
+        const queryText= 'INSERT INTO regions(city_name) VALUES($1)'; 
+        const queryResut = await db.query(queryText, [city_name]);
         return queryResut;
     }
 
@@ -29,11 +20,9 @@ class City{
 
 
     static async retrieveByCity(city){  
-        const myAPIKey ='f70b256f4890694176093c3efac55ce4'; 
-        const weatherAPI = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${myAPIKey}&units=metric`)
+        const weatherAPI = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${devKeys.MY_API_KEY}&units=metric`)
         const data = await weatherAPI.json(); 
         return data;
-
     }
 }
 

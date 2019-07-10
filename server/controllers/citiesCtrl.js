@@ -1,5 +1,4 @@
 import City from '../models/CityModel'; 
-import dbInit from '../db/dbInit';
 
 class Cities{
 
@@ -12,7 +11,7 @@ class Cities{
             .status(201)
             .json({
                 status: 201, 
-                message: 'New region created!',
+                message: 'New city created!',
                 data: rows
             })
 

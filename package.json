@@ -7,6 +7,8 @@
     "db:migrate": "node --require @babel/register ./server/db/dbConnect.js",
     "db:droptables": "node --require @babel/register ./server/db/dropTables.js",
     "server": "npm run db:droptables && npm run db:migrate && babel-watch ./server/server.js",
+    "client": "npm start --prefix client", 
+    "dev": "concurrently \"npm run server\"  \"npm run client \"", 
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
