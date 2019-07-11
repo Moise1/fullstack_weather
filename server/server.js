@@ -1,6 +1,10 @@
 import express from "express";  
 import path from 'path';
 import regionRouter from './routes/regionRouter'
+import dotenv from 'dotenv';
+
+
+dotenv.config();
 
 const app = express(); 
 
@@ -10,7 +14,7 @@ app.use(regionRouter);
 
 
 
-if(NODE_ENV === 'production'){
+if(process.env.NODE_ENV === "production"){
     app.use(express.static(path.join(__dirname, '../client/build'))); 
     app.use((req, res)=>{
         res.sendfile(path.join(__dirname, '../client/build/index.hml'));
@@ -33,6 +37,6 @@ app.use("*", (req, res) =>{
 
 
 const port = process.env.PORT || 5000; 
-app.listen(port, () => console.log(`App listening on port ${port}`) );
+app.listen(port);
 
 export default app;
