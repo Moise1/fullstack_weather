@@ -1,1 +1,1 @@
-web: NODE_ENV=production npm run prod  --exec babel-node
+web: NODE_ENV=production  babel-node  --exec npm run prod   

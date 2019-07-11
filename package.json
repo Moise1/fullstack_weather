@@ -9,8 +9,8 @@
     "server": "npm run db:droptables && npm run db:migrate && babel-watch ./server/server.js",
     "client": "npm start --prefix client", 
     "dev": "concurrently \"npm run server\"  \"npm run client \"", 
-    "heroku": "cd client && npm install && npm run build",
-    "prod": "npm run server && npm run heroku" 
+    "heroku-postbuild": "cd client && npm install && npm run build",
+    "prod": "npm run server" 
   },
   "repository": {
     "type": "git",

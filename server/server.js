@@ -3,7 +3,6 @@ import path from 'path';
 import regionRouter from './routes/regionRouter'
 import dotenv from 'dotenv';
 
-
 dotenv.config();
 
 const app = express(); 
