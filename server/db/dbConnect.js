@@ -1,7 +1,7 @@
 import pool from "./index";
 
 pool.on("connect", () => {
-    console.log('DB Connected!')
+    
 });
 
 const tables = `
