@@ -53,7 +53,6 @@ class App extends React.Component {
    fetch(`/api/v1/region/${city}`)
    .then(res => res.json()) 
    .then(weather => {
-     console.log('The Weather:', weather);
      this.setState({weather})
    });
   };
