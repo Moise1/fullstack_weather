@@ -9,7 +9,8 @@
     "server": "npm run db:droptables && npm run db:migrate && babel-watch ./server/server.js",
     "client": "npm start --prefix client", 
     "dev": "concurrently \"npm run server\"  \"npm run client \"", 
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "heroku": "cd client && npm install && npm run build",
+    "prod": "npm run server && npm run heroku" 
   },
   "repository": {
     "type": "git",
@@ -25,10 +26,11 @@
     "dotenv": "^7.0.0",
     "express": "^4.17.1",
     "node-fetch": "^2.6.0",
-    "pg": "^7.10.0"
+    "pg": "^7.10.0", 
+    "concurrently": "^4.1.1"
   },
   "devDependencies": {
-    "concurrently": "^4.1.1"
+    
   },
   "keywords": [
     "Nodejs",

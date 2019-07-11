@@ -10,13 +10,19 @@ app.use(regionRouter);
 
 
 
+if(ENV === 'production'){
+    app.use(express.static(path.join(__dirname, '../client/build'))); 
+    app.use((req, res)=>{
+        res.sendfile(path.join(__dirname, '../client/build/index.hml'));
+    })
+}
+
 app.get("/", (req, res) =>{
     return res.status(200).json({
         status: 200,
         message: "Welcome to Weather Guru!"
     });
 });
-
 
 app.use("*", (req, res) =>{
     return res.status(405).json({
